@@ -14,7 +14,7 @@ function addWonder(name, img) {
   );
   div.setAttribute("value", name);
   let learnMore = document.createElement("a");
-  learnMore.setAttribute("class", "primary-bg primary");
+  learnMore.setAttribute("class", "primary-bg primary learn-more");
   learnMore.innerHTML = "Learn More";
   learnMore.setAttribute("href", `./../pages/wonder.html?name=${name}`);
 

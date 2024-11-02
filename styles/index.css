@@ -1,11 +1,16 @@
 header {
-  background-color: #7b4930;
-  height: 100px;
-  margin-bottom: 50px;
-  width: 100%;
+  background-color: #222020cb;
+  height: 10%;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: larger;
 }
+
 main {
   gap: 30px;
+}
+h2 {
+  text-align: center;
 }
 .div-img {
   width: 300px;
@@ -35,4 +40,13 @@ main {
   transform: translate(-50%, -50%);
   font-weight: bold;
   background-color: rgba(229, 232, 222, 0.888);
+}
+
+.learn-more {
+  border: 2px solid #2c8a91;
+}
+.learn-more:hover {
+  border: 2px solid #2c8a91;
+  color: #2c8a91;
+  background-color: #cef5f5;
 }
