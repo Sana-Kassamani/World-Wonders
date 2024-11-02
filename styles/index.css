@@ -1,0 +1,7 @@
+.div-img {
+  width: 50vh;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
