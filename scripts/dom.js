@@ -1,6 +1,7 @@
 let wondersDiv = document.getElementById("wonders");
 let wonderSection = document.getElementById("wonder-details");
 let wonderImages = document.getElementById("wonder-images");
+let loadMore = document.getElementById("load-more");
 
 function addWonder(name, img) {
   let div = document.createElement("div");
@@ -12,7 +13,7 @@ function addWonder(name, img) {
     window.location.href = `./../pages/wonder.html?name=${name}`;
   });
   let html = `
-  <h5>${name}</h5>
+  <h5 class="wonder-name">${name}</h5>
   <div class="div-img">
     <img src=${img} alt="" />
   </div>`;

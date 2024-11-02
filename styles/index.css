@@ -1,8 +1,11 @@
 .div-img {
-  width: 50vh;
-  height: 50vh;
+  width: 23vw;
+  height: 30vh;
 }
 .wonders-section {
   display: flex;
   flex-wrap: wrap;
+}
+
+.wonder {
 }
