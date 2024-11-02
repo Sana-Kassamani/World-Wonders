@@ -16,11 +16,12 @@ img {
   object-position: 30% 10%;
   opacity: 0.9;
 }
-a {
-  text-decoration: none;
+li {
+  list-style: none;
 }
 
 a {
+  text-decoration: none;
   padding: 10px 8px;
   border-radius: 5px;
   font-weight: bold;

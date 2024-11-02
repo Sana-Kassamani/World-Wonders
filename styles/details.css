@@ -2,12 +2,62 @@ header {
 }
 main {
 }
-.section-details {
+.details {
+  border: 5px solid #d28e28;
+  gap: 20px;
+  padding: 20px;
+}
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: medium;
+  font-weight: 500;
+}
+.images-section {
+  padding: 20px;
+  gap: 10px;
 }
 .div-img {
-  width: 50vw;
+  /* width: 40vw; */
   height: 50vh;
 }
+.details-list {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: medium;
+  font-weight: 700;
+}
+.link-list {
+}
+.link-image {
+  width: 25px;
+  height: 25px;
+}
+/* .prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+} */
+
 .details {
   width: 50%;
 }

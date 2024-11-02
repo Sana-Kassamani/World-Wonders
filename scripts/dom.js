@@ -2,6 +2,9 @@ let wondersDiv = document.getElementById("wonders");
 let wonderSection = document.getElementById("wonder-details");
 let wonderImages = document.getElementById("wonder-images");
 let loadMore = document.getElementById("load-more");
+let main = document.getElementById("main-details");
+let prevLink = document.createElement("a");
+let nextLink = document.createElement("a");
 
 function addWonder(name, img) {
   let div = document.createElement("div");
@@ -30,42 +33,54 @@ function addWonder(name, img) {
 function addWonderDetails(wonderArray) {
   let wonder = wonderArray[0];
   let div = document.createElement("div");
-  div.setAttribute("class", "details");
+  div.setAttribute("class", "details flex column");
   div.innerHTML = `
   <h2>${wonder.name}</h2>
       <p>${wonder.summary ? wonder.summary : ""}</p>
-      <ul>
-        <h5>Details:</h5>
-        <li>${wonder.location ? wonder.location : ""}</li>
-        <li>${wonder.build_year ? wonder.build_year : ""}</li>
-        <li>${wonder.time_period ? wonder.time_period : ""}</li>
+      <ul class="details-list">
+        <li>Location: ${wonder.location ? wonder.location : "Unknown"}</li>
+        <li>Build Year: ${
+          wonder.build_year ? wonder.build_year : "Unknown"
+        }</li>
+        <li>Time Period: ${
+          wonder.time_period ? wonder.time_period : "Unknown"
+        }</li>
       </ul>
   `;
+
   let list = document.createElement("ul");
+  list.setAttribute("class", "link-list flex row");
   div.appendChild(list);
-  wonder.links.wiki && addLink(wonder.links.wiki, list);
-  wonder.links.britannica && addLink(wonder.links.britannica, list);
-  wonder.links.google_maps && addLink(wonder.links.google_maps, list);
-  wonder.links.trip_advisor && addLink(wonder.links.trip_advisor, list);
+  wonder.links.wiki &&
+    addLink(wonder.links.wiki, list, "./../assets/icons/wiki.png");
+  wonder.links.britannica &&
+    addLink(wonder.links.britannica, list, "./../assets/icons/britannica.png");
+  wonder.links.google_maps &&
+    addLink(wonder.links.google_maps, list, "./../assets/icons/maps.png");
+  wonder.links.trip_advisor &&
+    addLink(wonder.links.trip_advisor, list, "./../assets/icons/tripadv.png");
   wonderSection.appendChild(div);
   addWonderImages(wonder.links.images);
 }
 
 function addWonderImages(images) {
   const imagesArray = Array.from(images);
-  wonderImages.innerHTML = "";
   imagesArray.forEach((element) => {
-    wonderImages.innerHTML += `
-        <div class="div-img">
-            <img src=${element} alt="">
-        </div>`;
+    let div = document.createElement("div");
+    div.setAttribute("class", "div-img ");
+    div.innerHTML += `
+            <img src=${element} alt="">`;
+    wonderImages.appendChild(div);
   });
 }
 
-function addLink(link, list) {
+function addLink(link, list, src) {
   let listItem = document.createElement("li");
   let a = document.createElement("a");
-  a.innerHTML = "link";
+  let image = document.createElement("img");
+  image.setAttribute("src", src);
+  image.setAttribute("class", "link-image");
+  a.appendChild(image);
   a.setAttribute("href", link);
   listItem.appendChild(a);
   list.appendChild(listItem);

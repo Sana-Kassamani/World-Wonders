@@ -14,9 +14,16 @@
     <header>
       <h2>World Wonders</h2>
     </header>
-    <main class="flex column align-center">
-      <section id="wonder-details" class="flex column align-center"></section>
-      <section id="wonder-images"></section>
+    <main class="flex column align-center" id="main-details">
+      <section
+        id="wonder-details"
+        class="details-section flex column align-center"
+      ></section>
+      <section
+        id="wonder-images"
+        class="flex row wrap images-section"
+        href="./../assets/icons/wiki.png"
+      ></section>
     </main>
 
     <script
@@ -26,6 +33,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./../scripts/dom.js"></script>
+    <script src="./../scripts/slideShow.js"></script>
     <script src="./../scripts/wonderApi.js"></script>
   </body>
 </html>
