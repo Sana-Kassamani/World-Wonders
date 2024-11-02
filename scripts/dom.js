@@ -1,14 +1,20 @@
 let wondersDiv = document.getElementById("wonders");
 
-function addWonderName(name, img) {
-  let nameHeader = document.createElement("h5");
+function addWonder(name, img) {
   let div = document.createElement("div");
-  div.setAttribute("class", "div-img");
-  let image = document.createElement("img");
-  image.setAttribute("src", img);
-  nameHeader.innerHTML = name;
-  div.appendChild(nameHeader);
-  div.appendChild(image);
-
+  div.setAttribute("class", "wonder");
+  div.setAttribute("value", name);
+  let learnMore = document.createElement("button");
+  learnMore.innerHTML = "Learn More";
+  learnMore.addEventListener("click", () => {
+    window.location.href = `./../pages/wonder.html?${name}`;
+  });
+  let html = `
+  <h5>${name}</h5>
+  <div class="div-img">
+    <img src=${img} alt="" />
+  </div>`;
+  div.innerHTML = html;
+  div.appendChild(learnMore);
   wondersDiv.appendChild(div);
 }

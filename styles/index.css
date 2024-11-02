@@ -1,7 +1,8 @@
 .div-img {
   width: 50vh;
+  height: 50vh;
 }
-ul {
+.wonders-section {
   display: flex;
   flex-wrap: wrap;
 }
