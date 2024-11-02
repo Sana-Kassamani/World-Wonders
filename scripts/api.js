@@ -6,6 +6,7 @@ const fetchWonders = async function () {
   const fetchedNames = await instance.get();
   let added_index = index + 10;
   for (let i = index; i < added_index; i++) {
+    console.log(fetchedNames.data[i]);
     addWonder(fetchedNames.data[i].name, fetchedNames.data[i].links.images[0]);
   }
   index = added_index;
