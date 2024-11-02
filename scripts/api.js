@@ -22,6 +22,7 @@ const instance = axios.create({
 
 const fetchWorldWonders = async function () {
   const fetchedData = await instance.get();
+  console.log(fetchedData);
   return fetchedData;
 };
 
@@ -34,8 +35,14 @@ fetchWorldWonders().then((resolved) => {
 
 function loadWonders(data) {
   let added_index = index + 10;
-  for (let i = index; i < added_index && added_index < data.length; i++) {
+
+  for (let i = index; i < added_index && i < data.length; i++) {
     addWonder(data[i].name, data[i].links.images[0]);
   }
+
   index = added_index;
+  if (index > data.length) {
+    console.log("Finished");
+    loadMore.style.display = "none";
+  }
 }

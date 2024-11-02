@@ -5,17 +5,22 @@ let loadMore = document.getElementById("load-more");
 
 function addWonder(name, img) {
   let div = document.createElement("div");
-  div.setAttribute("class", "wonder");
+  div.setAttribute(
+    "class",
+    "wonder flex column justify-center align-center secondary-bg "
+  );
   div.setAttribute("value", name);
-  let learnMore = document.createElement("button");
+  let learnMore = document.createElement("a");
+  learnMore.setAttribute("class", "primary-bg primary");
   learnMore.innerHTML = "Learn More";
-  learnMore.addEventListener("click", () => {
-    window.location.href = `./../pages/wonder.html?name=${name}`;
-  });
+  learnMore.setAttribute("href", `./../pages/wonder.html?name=${name}`);
+
   let html = `
-  <h5 class="wonder-name">${name}</h5>
-  <div class="div-img">
+  
+  <div class="div-img flex justify-center align-center">
+  
     <img src=${img} alt="" />
+    <h5>${name}</h5>
   </div>`;
   div.innerHTML = html;
   div.appendChild(learnMore);
@@ -25,6 +30,7 @@ function addWonder(name, img) {
 function addWonderDetails(wonderArray) {
   let wonder = wonderArray[0];
   let div = document.createElement("div");
+  div.setAttribute("class", "details");
   div.innerHTML = `
   <h2>${wonder.name}</h2>
       <p>${wonder.summary ? wonder.summary : ""}</p>
@@ -34,14 +40,13 @@ function addWonderDetails(wonderArray) {
         <li>${wonder.build_year ? wonder.build_year : ""}</li>
         <li>${wonder.time_period ? wonder.time_period : ""}</li>
       </ul>
-      <ul>
-        <h5>Links</h5>
-        <li>${wonder.links.wiki ? wonder.links.wiki : ""}</li>
-        <li>${wonder.links.britannica ? wonder.links.britannica : ""}</li>
-        <li>${wonder.links.google_maps ? wonder.links.google_maps : ""}</li>
-        <li>${wonder.links.trip_advisor ? wonder.links.trip_advisor : ""}</li>
-      </ul>
   `;
+  let list = document.createElement("ul");
+  div.appendChild(list);
+  wonder.links.wiki && addLink(wonder.links.wiki, list);
+  wonder.links.britannica && addLink(wonder.links.britannica, list);
+  wonder.links.google_maps && addLink(wonder.links.google_maps, list);
+  wonder.links.trip_advisor && addLink(wonder.links.trip_advisor, list);
   wonderSection.appendChild(div);
   addWonderImages(wonder.links.images);
 }
@@ -55,4 +60,13 @@ function addWonderImages(images) {
             <img src=${element} alt="">
         </div>`;
   });
+}
+
+function addLink(link, list) {
+  let listItem = document.createElement("li");
+  let a = document.createElement("a");
+  a.innerHTML = "link";
+  a.setAttribute("href", link);
+  listItem.appendChild(a);
+  list.appendChild(listItem);
 }

@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./../styles/base/base.css" />
+    <link rel="stylesheet" href="./../styles/base/colors.css" />
+    <link rel="stylesheet" href="./../styles/base/utilities.css" />
     <link rel="stylesheet" href="./../styles/index.css" />
+    <link rel="stylesheet" href="./../styles/details.css" />
     <title>World Wonders</title>
   </head>
   <body>
-    <section id="wonder-details"></section>
-    <section id="wonder-images"></section>
+    <header>
+      <h2>World Wonders</h2>
+    </header>
+    <main class="flex column align-center">
+      <section id="wonder-details" class="flex column align-center"></section>
+      <section id="wonder-images"></section>
+    </main>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
       integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
