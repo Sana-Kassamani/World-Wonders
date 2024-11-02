@@ -52,13 +52,13 @@ function addWonderDetails(wonderArray) {
   list.setAttribute("class", "link-list flex row");
   div.appendChild(list);
   wonder.links.wiki &&
-    addLink(wonder.links.wiki, list, "./../assets/icons/wiki.png");
+    addLink(wonder.links.wiki, list, "./../assets/images/wiki.png");
   wonder.links.britannica &&
-    addLink(wonder.links.britannica, list, "./../assets/icons/britannica.png");
+    addLink(wonder.links.britannica, list, "./../assets/images/britannica.png");
   wonder.links.google_maps &&
-    addLink(wonder.links.google_maps, list, "./../assets/icons/maps.png");
+    addLink(wonder.links.google_maps, list, "./../assets/images/maps.png");
   wonder.links.trip_advisor &&
-    addLink(wonder.links.trip_advisor, list, "./../assets/icons/tripadv.png");
+    addLink(wonder.links.trip_advisor, list, "./../assets/images/tripadv.png");
   wonderSection.appendChild(div);
   addWonderImages(wonder.links.images);
 }
