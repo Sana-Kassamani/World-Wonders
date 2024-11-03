@@ -4,17 +4,25 @@ const instance = axios.create({
 });
 
 const fetchWorldWonders = async function () {
-  const fetchedData = await instance.get();
+  try {
+    const fetchedData = await instance.get();
 
-  return fetchedData;
+    return fetchedData;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-fetchWorldWonders().then((resolved) => {
-  loadWonders(resolved.data);
-  loadMore.addEventListener("click", () => {
+fetchWorldWonders()
+  .then((resolved) => {
     loadWonders(resolved.data);
+    loadMore.addEventListener("click", () => {
+      loadWonders(resolved.data);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
   });
-});
 
 function loadWonders(data) {
   let added_index = index + 10;
